@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f3f3f3;
+  }
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  form label {
+    display: block;
+    margin: 10px 0;
+  }
+  input, select {
+    padding: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #005bb5;
+  }
+  .player-input {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  

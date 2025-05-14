@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment</title>
+  <link rel="stylesheet" href="/static/css/payment.css">
+</head>
+<body>
+  <div class="payment-container">
+    <h1>Payment</h1>
+
+    <div class="payment-info">
+        <p><strong>Harga Ongkir:</strong> Rp {{ .Ongkir }}</p>
+        <p><strong>Total Harga:</strong> Rp {{ .TotalHarga }}</p>
+        <p><strong>Bank:</strong> {{ .Bank }}</p>
+        <p><strong>No Rekening:</strong> {{ .NoRekening }}</p>
+        <p><strong>Atas Nama:</strong> {{ .AtasNama }}</p>
+      </div>
+      
+
+    <form action="/submit-payment" method="POST" enctype="multipart/form-data" class="payment-form">
+      <input type="hidden" name="custom_id" value="{{.CustomID}}">
+
+      <label>Upload Bukti Transfer:</label>
+      <input type="file" name="bukti_transfer" id="buktiTransfer" accept="image/*" required>
+
+      <button type="submit" id="submitButton" disabled>Selesaikan</button>
+    </form>
+  </div>
+
+  <script src="/static/js/payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.table-produk {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.table-produk th, .table-produk td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.table-produk th {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #28a745;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    box-shadow: var(--shadow);
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    transition: var(--transition);
+}
+
+.sidebar-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-header h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: var(--light-text);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(108, 99, 255, 0.08);
+    color: var(--primary-color);
+}
+
+.sidebar-menu a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar-menu a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Header produk + tombol tambah */
+.header-produk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Tombol tambah produk */
+.btn-tambah {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-tambah:hover {
+    background-color: #218838;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}

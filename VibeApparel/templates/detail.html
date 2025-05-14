@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{.Title}}</title>
+  <link rel="stylesheet" href="/static/css/detail.css">
+</head>
+<body>
+  <div class="detail-container">
+    <h1>Detail Jersey</h1>
+    <img src="{{.Jersey.ImageURL}}" alt="Jersey" class="detail-image">
+    <p><strong>Deskripsi:</strong> {{.Jersey.Deskripsi}}</p>
+    <p><strong>Harga:</strong> Rp {{.Jersey.Harga}}</p>
+    <a href="/custom/{{.Jersey.ID}}" class="btn-custom">Custom Jersey</a>
+  </div>
+</body>
+</html>

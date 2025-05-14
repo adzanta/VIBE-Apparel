@@ -1,0 +1,93 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-container {
+  max-width: 700px;
+  background: white;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+.order-summary {
+  margin-bottom: 30px;
+}
+
+.order-summary p, .order-summary li {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+/* TABEL PEMAIN */
+.players-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.players-table th, .players-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.players-table th {
+  background-color: #f9f9f9;
+}
+
+/* Buat tabel makin keren, opsional */
+.players-table th:first-child {
+  border-top-left-radius: 8px;
+}
+.players-table th:last-child {
+  border-top-right-radius: 8px;
+}
+.players-table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+.players-table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.checkout-form input[type="text"],
+.checkout-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.checkout-form button {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.checkout-form button:hover {
+  background: #45a049;
+}

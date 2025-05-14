@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #ff6b6b;
+    --text-color: #333;
+    --light-text: #767676;
+    --bg-color: #f7f9fc;
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    box-shadow: var(--shadow);
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    transition: var(--transition);
+}
+
+.sidebar-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-header h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: var(--light-text);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(108, 99, 255, 0.08);
+    color: var(--primary-color);
+}
+
+.sidebar-menu a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar-menu a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.main-header {
+    margin-bottom: 30px;
+}
+
+.main-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Stats Cards */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 18px;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.card:nth-child(1) {
+    border-top: 4px solid var(--primary-color);
+}
+
+.card:nth-child(2) {
+    border-top: 4px solid var(--secondary-color);
+}
+
+.card:nth-child(3) {
+    border-top: 4px solid #38b2ac;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .sidebar {
+        width: 80px;
+        transition: var(--transition);
+    }
+    
+    .sidebar-header h2 {
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .sidebar-menu a .menu-text {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 80px;
+    }
+    
+    .sidebar:hover {
+        width: 250px;
+    }
+    
+    .sidebar:hover .sidebar-header h2 {
+        opacity: 1;
+    }
+    
+    .sidebar:hover .sidebar-menu a .menu-text {
+        display: inline;
+    }
+}
+
+@media (max-width: 767px) {
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .sidebar {
+        width: 0;
+        opacity: 0;
+        z-index: 999;
+    }
+    
+    .sidebar.active {
+        width: 250px;
+        opacity: 1;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-cards .card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.stats-cards .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stats-cards .card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.stats-cards .card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.logout-link {
+    color: #f44336 !important;
+    font-weight: bold;
+}
+
+.logout-link:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+}

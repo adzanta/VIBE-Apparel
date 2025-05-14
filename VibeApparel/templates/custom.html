@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Jersey</title>
+  <link rel="stylesheet" href="/static/css/custom.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Custom Jersey</h2>
+    <form action="/submit-custom" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="jersey_id" value="{{.JerseyID}}">
+
+      <label>
+        Apakah anda membeli untuk klub?
+        <select name="ada_nama_klub" id="ada_nama_klub">
+          <option value="no">Tidak</option>
+          <option value="yes">Ya</option>
+        </select>
+      </label>
+
+      <div id="club_name_section" style="display: none;">
+        <label>Nama Klub: <input type="text" name="nama_klub"></label>
+      </div>
+
+      <label>Jumlah Pemain:
+        <input type="number" id="jumlah_pemain" name="jumlah_pemain" min="1" max="30">
+      </label>
+
+      <div id="player_forms"></div>
+
+      <h3>Upload Logo</h3>
+      <label>Logo Tengah: <input type="file" name="logo_tengah"></label>
+      <label>Logo Dada Kanan: <input type="file" name="logo_dada_kanan"></label>
+      <label>Logo Dada Kiri: <input type="file" name="logo_dada_kiri"></label>
+
+      <button type="submit">Checkout</button>
+    </form>
+  </div>
+
+  <script src="/static/js/custom.js"></script>
+</body>
+</html>

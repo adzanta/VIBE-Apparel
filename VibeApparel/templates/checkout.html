@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/static/css/checkout.css">
+</head>
+<body>
+  <div class="checkout-container">
+    <h1>Checkout</h1>
+
+    <div class="order-summary">
+      <h2>Ringkasan Pesanan</h2>
+      {{ if .Jersey.AdaNamaKlub }}
+        <p><strong>Nama Klub:</strong> {{ .Jersey.NamaKlub }}</p>
+      {{ end }}
+
+      <h3>Daftar Pemain:</h3>
+      <table class="players-table">
+        <thead>
+          <tr>
+            <th>Nama Pemain</th>
+            <th>Nomor Punggung</th>
+            <th>Ukuran</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .Players }}
+            <tr>
+              <td>{{ .nama_pemain }}</td>
+              <td>{{ .nomor_punggung }}</td>
+              <td>{{ .ukuran }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+
+    <form action="/submit-checkout" method="POST" class="checkout-form">
+      <input type="hidden" name="custom_id" value="{{.CustomID}}">
+
+      <label>Nama Penerima:
+        <input type="text" name="nama_penerima" required>
+      </label>
+
+      <label>Alamat:
+        <textarea name="alamat" required></textarea>
+      </label>
+
+      <label>No Telepon:
+        <input type="text" name="no_telepon" required>
+      </label>
+
+      <button type="submit">Bayar</button>
+    </form>
+  </div>
+
+  <script src="/static/js/checkout.js"></script>
+</body>
+</html>

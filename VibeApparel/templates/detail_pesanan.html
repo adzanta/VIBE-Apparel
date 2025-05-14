@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Pesanan - Vibe Apparel</title>
+    <link rel="stylesheet" href="/static/css/detail_pesanan.css">
+</head>
+<body>
+    <main class="main-content container">
+        <h1>Detail Pesanan</h1>
+
+        <div class="info-penerima">
+            <p><strong>Nama Penerima:</strong> {{.Pesanan.NamaPenerima}}</p>
+            <p><strong>Alamat:</strong> {{.Pesanan.Alamat}}</p>
+            <p><strong>No. Telepon:</strong> {{.Pesanan.NoTelepon}}</p>
+            <p><strong>Total Harga:</strong> Rp {{.TotalHarga}}</p>
+            <p><strong>Tanggal Pemesanan:</strong> {{.CreatedAtFormatted}}</p>
+        </div>
+
+        <h2>Status Pembayaran</h2>
+        <form action="/pesanan/update-status" method="POST" class="status-form">
+            <input type="hidden" name="id" value="{{.Pesanan.ID}}">
+            <select name="status">
+                <option value="menunggu" {{if eq .StatusPembayaran "menunggu"}}selected{{end}}>Menunggu</option>
+                <option value="sudah dibayar" {{if eq .StatusPembayaran "sudah dibayar"}}selected{{end}}>Sudah Dibayar</option>
+                <option value="gagal" {{if eq .StatusPembayaran "gagal"}}selected{{end}}>Gagal</option>
+            </select>
+            <button type="submit">Update Status</button>
+        </form>
+
+        <h2>Bukti Transfer</h2>
+        <div class="bukti-transfer">
+            {{if .BuktiTransfer}}
+                <img src="/static/bukti/{{.BuktiTransfer}}" alt="Bukti Transfer" class="bukti-img" />
+            {{else}}
+                <p><em>Tidak ada bukti transfer</em></p>
+            {{end}}
+        </div>
+
+
+        <h2>Daftar Pemain</h2>
+        <table class="table-pemain">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>No Punggung</th>
+                    <th>Ukuran</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .Pemain}}
+                <tr>
+                    <td>{{.Nama}}</td>
+                    <td>{{.NoPunggung}}</td>
+                    <td>{{.Ukuran}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+
+        <h2>Jersey Yang Dipesan</h2>
+        <div class="jersey-container">
+            {{range .Jersey}}
+            <div class="jersey-item">
+                <img src="{{.ImageURL}}" alt="Jersey" />
+                <p>{{.Deskripsi}}</p>
+            </div>
+            {{end}}
+        </div>
+    </main>
+</body>
+</html>

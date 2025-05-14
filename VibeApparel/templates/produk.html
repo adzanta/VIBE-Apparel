@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelola Produk - Vibe Apparel</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/produk.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Vibe Apparel</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="/dashboard" class="active">Dashboard</a>
+                <a href="/produk">Produk</a>
+                <a href="/pesanan">Pesanan</a>
+                <a href="/logout" class="logout-link">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content container">
+    <div class="header-produk">
+        <h1>Daftar Produk</h1>
+            {{if eq .Success "tambah"}}
+        <div class="alert success">✅ Produk berhasil ditambahkan!</div>
+    {{else if eq .Success "edit"}}
+        <div class="alert success">✅ Produk berhasil diubah!</div>
+    {{else if eq .Success "hapus"}}
+        <div class="alert success">🗑️ Produk berhasil dihapus!</div>
+    {{end}}
+        <a href="/TambahProduk" class="btn btn-tambah">+ Tambah Produk</a>
+    </div>
+            <table class="table-produk">
+                <thead>
+                    <tr>
+                        <th>Gambar</th>
+                        <th>Deskripsi</th>
+                        <th>Harga</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Produk}}
+                    <tr>
+                        <td><img src="{{.ImageURL}}" width="100"></td>
+                        <td>{{.Deskripsi}}</td>
+                        <td>Rp {{.Harga}}</td>
+                        <td>
+                            <a href="/EditProduk/{{.ID}}" class="btn btn-edit">Edit</a>
+                            <a href="/HapusProduk/{{.ID}}" class="btn btn-delete" onclick="return confirm('Yakin hapus produk ini?')">Hapus</a>
+                        </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </main>        
+    </div>
+    <script src="/static/js/produk.js"></script>
+</body>
+</html>

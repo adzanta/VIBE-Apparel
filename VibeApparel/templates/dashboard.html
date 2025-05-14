@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Vibe Apparel</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Vibe Apparel</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="/dashboard" class="active">Dashboard</a>
+                <a href="/produk">Produk</a>
+                <a href="/pesanan">Pesanan</a>
+                <a href="/logout-admin" class="logout-link">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+            </header>
+
+            <section class="stats-cards">
+                <div class="card">
+                    <h3>Total Pendapatan</h3>
+                    <p>{{.TotalPendapatan}}</p>
+                </div>
+                <div class="card">
+                    <h3>Jumlah Produk</h3>
+                    <p>{{.JumlahProduk}}</p>
+                </div>
+                <div class="card">
+                    <h3>Jumlah Pesanan</h3>
+                    <p>{{.JumlahPesanan}}</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

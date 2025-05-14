@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Produk - Vibe Apparel</title>
+    <link rel="stylesheet" href="/static/css/edit_produk.css">
+</head>
+<body>
+        <main class="main-content container">
+            <h1>Edit Jersey</h1>
+
+            <form action="/edit-produk/{{.Produk.ID}}" method="POST" enctype="multipart/form-data">
+                <label for="deskripsi">Deskripsi:</label><br>
+                <input type="text" name="deskripsi" id="deskripsi" value="{{.Produk.Deskripsi}}" required><br><br>
+
+                <label for="harga">Harga:</label><br>
+                <input type="number" name="harga" id="harga" value="{{.Produk.Harga}}" required><br><br>
+
+                <label>Gambar Saat Ini:</label><br>
+                <img src="{{.Produk.ImageURL}}" width="150"><br><br>
+
+                <label for="gambar">Ganti Gambar (opsional):</label><br>
+                <input type="file" name="gambar" id="gambar" accept="image/*"><br><br>
+
+                <button type="submit">Simpan Perubahan</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pesanan-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.jersey-img {
+    width: 200px;
+    display: block;
+    margin-bottom: 10px;
+}

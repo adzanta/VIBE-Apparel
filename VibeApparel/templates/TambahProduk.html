@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/tambah_produk.css">
+    <title>Tambah Produk</title>
+</head>
+<body>
+    <h1>Tambah Jersey Baru</h1>
+    <form action="/tambah-produk" method="POST" enctype="multipart/form-data">
+        <label for="deskripsi">Deskripsi:</label><br>
+        <input type="text" name="deskripsi" id="deskripsi" required><br><br>
+
+        <label for="harga">Harga:</label><br>
+        <input type="number" name="harga" id="harga" required><br><br>
+
+        <label for="gambar">Gambar Jersey:</label><br>
+        <input type="file" name="gambar" id="gambar" accept="images/*" required><br><br>
+
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>

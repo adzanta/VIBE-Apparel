@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vibe Apparel - Jersey Store</title>
+  <link rel="stylesheet" href="/static/css/home.css" />
+</head>
+<body>
+  <div class="sales-container">
+    <header>
+  <div class="header-top">
+    <h1>Hi, {{.Username}}</h1>
+    <div class="nav-buttons">
+      <a href="/status" class="btn-nav">Status Pemesanan</a>
+      <a href="/logout" class="btn-nav logout">Logout</a>
+    </div>
+    <div class="burger-menu" id="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <p>Selamat Datang di Toko Jersey Pilihanmu!</p>
+</header>
+
+    <section class="jersey-grid">
+      {{range $jersey := .Jerseys}}
+      <div class="jersey-card">
+        <img src="{{$jersey.Image}}" alt="Jersey" class="jersey-image" />
+        <div class="jersey-info">
+          <h3>{{$jersey.Deskripsi}}</h3>
+          <p class="price">Rp{{printf "%.0f" $jersey.Harga}}</p>
+        </div>
+        <button onclick="window.location.href='/detail/{{$jersey.ID}}'">Beli Sekarang</button>
+      </div>
+      {{end}}
+    </section>
+  </div>
+
+  <script src="/static/js/home.js"></script>
+</body>
+</html>
